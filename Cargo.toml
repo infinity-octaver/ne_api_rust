@@ -1,0 +1,23 @@
+[package]
+name = "ne_api"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "Async Rust client for the NextEngine (ネクストエンジン) API"
+license = "MIT"
+repository = "https://github.com/infinity-octaver/ne_api_rust"
+readme = "README.md"
+keywords = ["nextengine", "ecommerce", "api", "client"]
+categories = ["api-bindings", "web-programming::http-client"]
+
+[dependencies]
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tokio = { version = "1", features = ["sync"] }
+url = "2"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+wiremock = "0.6"
